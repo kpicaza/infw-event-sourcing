@@ -1,0 +1,24 @@
+{
+  "name": "infw/event-sourcing",
+  "license": "MIT",
+  "repositories": [
+    {
+      "type": "path",
+      "url": "../*"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "InFw\\EventSourcing\\": "src/InFw/EventSourcing"
+    }
+  },
+  "require": {
+    "php": "^7.0",
+    "league/event": "^2.1"
+  },
+  "require-dev": {
+    "memio/spec-gen": "^0.6",
+    "phpspec/phpspec": "^3.0@beta",
+    "henrikbjorn/phpspec-code-coverage": "^3.0"
+  }
+}
