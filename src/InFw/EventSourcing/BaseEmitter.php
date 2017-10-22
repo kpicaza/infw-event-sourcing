@@ -11,7 +11,7 @@ namespace InFw\EventSourcing;
 use League\Event\Emitter;
 use League\Event\EventInterface;
 
-class BaseEmitter extends Emitter
+class BaseEmitter extends Emitter implements EmitterInterface
 {
     protected $events = [];
 
