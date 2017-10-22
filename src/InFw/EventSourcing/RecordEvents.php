@@ -6,7 +6,7 @@ use DateTime;
 
 trait RecordEvents
 {
-    public function record(string $name, array $data)
+    protected function record(string $name, array $data)
     {
         Emitter::instance()->append(new Event(
             $name,
