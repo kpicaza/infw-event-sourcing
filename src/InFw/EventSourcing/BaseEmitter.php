@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: kpicaza
- * Date: 7/10/17
- * Time: 17:38
- */
 
 namespace InFw\EventSourcing;
 
