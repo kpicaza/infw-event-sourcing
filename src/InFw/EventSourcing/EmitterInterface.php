@@ -9,4 +9,6 @@ interface EmitterInterface
     public function append(EventInterface $event);
 
     public function publish();
+
+    public function events();
 }

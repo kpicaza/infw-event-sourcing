@@ -21,4 +21,8 @@ class BaseEmitter extends Emitter implements EmitterInterface
         );
     }
 
+    public function events()
+    {
+        return $this->events;
+    }
 }
