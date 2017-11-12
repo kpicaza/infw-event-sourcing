@@ -62,6 +62,10 @@ class BaseEmitter extends Emitter implements EmitterInterface
 
     protected function invokeProjectors($name, EventInterface $event)
     {
+        if (!array_key_exists($name, $this->projectors)) {
+            return;
+        }
+
         $projectors = $this->projectors[$name];
         if ($event->isPropagationStopped()) {
             return;
