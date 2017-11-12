@@ -1,6 +1,6 @@
 <?php
 
-namespace InFw\TacticianAdapter\Factory;
+namespace InFw\EventSourcing\Factory;
 
 use InFw\EventSourcing\Emitter;
 use Psr\Container\ContainerInterface;
