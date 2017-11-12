@@ -20,5 +20,9 @@
     "memio/spec-gen": "^0.6",
     "phpspec/phpspec": "^3.0@beta",
     "henrikbjorn/phpspec-code-coverage": "^3.0"
+  },
+  "suggest": {
+    "league/tactician": "Provides event dispatching middleware.",
+    "zendframework/zend-expressive": "Provides out of the box config provider for zend expressive."
   }
 }
