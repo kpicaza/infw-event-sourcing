@@ -16,10 +16,16 @@ class ConfigProvider
                 ],
             ],
             'events' => [
-//                '*' => [
-//                    'listeners' => [],
-//                    'projectors' => [],
-//                ]
+                    'listeners' => [
+//                        Event::class => [
+//                            Listener::class
+//                        ]
+                    ],
+                    'projectors' => [
+//                        Event::class => [
+//                            Projector::class
+//                        ]
+                    ],
             ]
         ];
     }

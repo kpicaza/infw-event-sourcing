@@ -2,9 +2,7 @@
 
 return [
     'events' => [
-        '*' => [
-            'listeners' => [],
-            'projectors' => [],
-        ]
+        'listeners' => [],
+        'projectors' => [],
     ]
 ];
