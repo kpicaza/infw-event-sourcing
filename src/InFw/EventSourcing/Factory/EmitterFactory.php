@@ -13,11 +13,15 @@ class EmitterFactory
 
         $emitter = Emitter::instance();
 
-        array_walk($events['listeners'], function ($listener, $event) use ($container, $emitter) {
-            $emitter->addListener($event, $container->get($listener));
+        array_walk($events['listeners'], function ($listeners, $event) use ($container, $emitter) {
+            array_walk($listeners, function ($listener) use ($container, $emitter, $event) {
+                $emitter->addListener($event, $container->get($listener));
+            });
         });
-        array_walk($events['projectors'], function ($projector, $event) use ($container, $emitter) {
-            $emitter->addProjector($event, $container->get($projector));
+        array_walk($events['projectors'], function ($projectors, $event) use ($container, $emitter) {
+            array_walk($projectors, function ($projector) use ($container, $emitter, $event) {
+                $emitter->addProjector($event, $container->get($projector));
+            });
         });
 
         return $emitter;
