@@ -16,7 +16,7 @@ class EmitterFactory
         array_walk($events['listeners'], function ($listener, $event) use ($container, $emitter) {
             $emitter->addListener($event, $container->get($listener));
         });
-        array_walk($events['projectors'], function ($projector, $event) use ($container, $emitter, $event) {
+        array_walk($events['projectors'], function ($projector, $event) use ($container, $emitter) {
             $emitter->addProjector($event, $container->get($projector));
         });
 
