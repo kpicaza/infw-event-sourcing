@@ -43,9 +43,8 @@ class BaseEmitter extends Emitter implements EmitterInterface
     public function project(EventInterface $event)
     {
         list($name, $event) = $this->prepareEvent($event);
-        $arguments = [$event] + func_get_args();
-        $this->invokeProjectors($name, $event, $arguments);
-        $this->invokeProjectors('*', $event, $arguments);
+        $this->invokeProjectors($name, $event);
+        $this->invokeProjectors('*', $event);
 
         return $event;
     }
@@ -61,16 +60,16 @@ class BaseEmitter extends Emitter implements EmitterInterface
         return $results;
     }
 
-    protected function invokeProjectors($name, EventInterface $event, array $arguments)
+    protected function invokeProjectors($name, EventInterface $event)
     {
         $projectors = $this->projectors[$name];
         if ($event->isPropagationStopped()) {
             return;
         }
 
-        array_walk($projectors,  function (array $orderedProjectors) use ($arguments) {
-            array_walk($orderedProjectors , function (callable $projector) use ($arguments) {
-                call_user_func($projector, $arguments);
+        array_walk($projectors,  function (array $orderedProjectors) use ($event) {
+            array_walk($orderedProjectors , function (callable $projector) use ($event) {
+                call_user_func($projector, $event);
             });
         });
     }
